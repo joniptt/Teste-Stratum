@@ -36,9 +36,9 @@ export default {
 
   methods: {
     async getCount() {
-      const data = axios.get("https://swapi.dev/api/people.count")
       try {
-        console.log(data)
+        const response = await axios.get("https://swapi.dev/api/people")
+        console.log(response)
       } catch (error) {
         console.log(error)
       }
