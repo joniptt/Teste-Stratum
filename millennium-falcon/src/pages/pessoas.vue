@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li>
-        <a href="">Pessoas</a>
+        <a href="/">Home</a>
       </li>
       <li>
         <a href="">Filmes</a>
@@ -13,13 +13,16 @@
     </ul>
     <div id="containner">
       <div id="card">
-        <h1>Pessoas</h1>
+        <h1></h1>
       </div>
       <div id="card">
-        <h1>Filmes</h1>
+        <h1></h1>
       </div>
       <div id="card">
-        <h1>Naves</h1>
+        <h1></h1>
+      </div>
+      <div id="card">
+        <h1></h1>
       </div>
     </div>
   </div>

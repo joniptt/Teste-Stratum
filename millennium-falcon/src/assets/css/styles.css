@@ -26,15 +26,24 @@ li a:hover {
   width: 300px;
   height: 400px;
   float: left;
-  border: 1px double darkslategray;
+  border: 1px double chartreuse;
   padding: 45px;
   text-align: center;
   display: block;
-  margin: 10px;
+  margin: 25px;
   border-radius: 10px;
   border-width: 5px;
+  color: white;
 }
 #containner {
   margin: 0 auto;
   display: table;
+}
+p {
+  margin: 10px;
+  padding: 10px;
+  font-size: 30pt;
+}
+body {
+  background-color: darkslategray;
 }
