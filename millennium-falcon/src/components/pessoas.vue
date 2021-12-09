@@ -1,9 +1,36 @@
-<template></template>
+<template>
+  <div>
+    <ul>
+      <li>
+        <a href="">Pessoas</a>
+      </li>
+      <li>
+        <a href="">Filmes</a>
+      </li>
+      <li>
+        <a href="">Naves</a>
+      </li>
+    </ul>
+    <div id="containner">
+      <div id="card">
+        <h1>Pessoas</h1>
+      </div>
+      <div id="card">
+        <h1>Filmes</h1>
+      </div>
+      <div id="card">
+        <h1>Naves</h1>
+      </div>
+    </div>
+  </div>
+</template>
 
 <script>
 export default {
-  name: pessoas,
+  name: "Pessoas",
 }
 </script>
 
-<style></style>
+<style>
+@import "../assets/css/styles.css";
+</style>
