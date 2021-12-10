@@ -2,7 +2,7 @@
   <div>
     <footer id="navbar">
       <a href="/">Home</a>
-      <a href="">Filmes</a>
+      <a href="/filmes">Filmes</a>
       <a href="">Naves</a>
     </footer>
 
@@ -12,7 +12,7 @@
         <ul class="jedi">
           <li>Nome:{{ luke.name }}</li>
           <li>Idade:{{ luke.birth_year }}</li>
-          <li>Planeta natal:</li>
+          <li>Planeta natal: <button></button></li>
         </ul>
       </div>
       <div id="card">

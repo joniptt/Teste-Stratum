@@ -15,6 +15,11 @@ const routes = [
 
     component: () => import("../pages/pessoas"),
   },
+  {
+    path: "/filmes",
+    name: "Filmes",
+    component: () => import("../pages/filmes"),
+  },
 ]
 
 const router = new VueRouter({

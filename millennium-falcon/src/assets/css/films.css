@@ -1,0 +1,57 @@
+#navbar {
+  top: 0;
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  overflow: hidden;
+  margin-left: -10px;
+  display: block;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 20px 24px;
+  color: chartreuse;
+  text-decoration: none;
+  transition: all ease 1s;
+  width: 30%;
+}
+#navbar a:hover {
+  color: black;
+  background-color: chartreuse;
+}
+
+table,
+td,
+th {
+  height: 50px;
+  border: 1px double black;
+}
+th {
+  background-color: chartreuse;
+  color: black;
+  text-align: none;
+  height: 100px;
+}
+tr:nth-child(even) {
+  background-color: rgb(98, 93, 93);
+}
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+td {
+  color: white;
+}
+table {
+  border-collapse: collapse;
+  width: 75%;
+  margin: 150px auto;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+}

@@ -2,7 +2,7 @@
   <div id="main">
     <footer id="navbar">
       <a href="/pessoas">Pessoas</a>
-      <a href="">Filmes</a>
+      <a href="/filmes">Filmes</a>
       <a href="">Naves</a>
     </footer>
     <div id="containner">
@@ -30,19 +30,18 @@ export default {
     pessoas: 0,
     naves: 0,
     filmes: 0,
-    image: { backgroundImage: "url(../assets/images/espaco.jpg)" },
   }),
   mounted() {
     api.get("people").then((response) => {
       this.pessoas = response.data.count
       console.log(response.data.count)
     })
-    api.get("starships").then((response) => {
-      this.naves = response.data.count
-      console.log(response.data.count)
-    })
     api.get("films").then((response) => {
       this.filmes = response.data.count
+      console.log(response.data.count)
+    })
+    api.get("starships").then((response) => {
+      this.naves = response.data.count
       console.log(response.data.count)
     })
   },
