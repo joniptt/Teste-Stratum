@@ -26,6 +26,7 @@
         </ul>
       </div>
       <div id="card">
+        <img src="../assets/images/leia.jpg" alt="leia" />
         <ul class="jedi">
           <li>
             {{ leia.name }}
@@ -35,6 +36,7 @@
         </ul>
       </div>
       <div id="card">
+        <img src="../assets/images/obi.jpg" alt="obi" />
         <ul class="jedi">
           <li>
             {{ obi.name }}
@@ -56,7 +58,9 @@ export default {
     darth: [],
     leia: [],
     obi: [],
+    planeta: [],
   }),
+  methods: {},
   computed: {},
   mounted() {
     api.get("people").then((response) => {

@@ -60,3 +60,9 @@ img {
   max-height: 100%;
   object-fit: contain;
 }
+button {
+  display: block;
+  background-color: black;
+  border-radius: 5px;
+  color: chartreuse;
+}
