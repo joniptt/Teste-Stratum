@@ -1,42 +1,42 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+#navbar {
+  top: 0;
+  position: fixed;
   background-color: black;
-  border-radius: 5px;
+  width: 100%;
+  overflow: hidden;
+  margin-left: -10px;
+  display: block;
 }
-li {
+
+#navbar a {
   float: left;
-}
-li a {
   display: block;
   text-align: center;
   padding: 20px 24px;
   color: chartreuse;
   text-decoration: none;
   transition: all ease 1s;
-  border-radius: 5px;
+  width: 30.83%;
 }
-li a:hover {
+#navbar a:hover {
   color: black;
   background-color: chartreuse;
 }
 #card {
   width: 300px;
-  height: 400px;
+  height: 300px;
   float: left;
   border: 1px double chartreuse;
-  padding: 45px;
+  
+  margin: 15px;
   text-align: center;
   display: block;
-  margin: 25px;
-  border-radius: 10px;
   border-width: 5px;
   color: white;
 }
 #containner {
-  margin: 0 auto;
+  padding: 25px 25px;
+  margin: 45px auto;
   display: table;
 }
 p {
@@ -45,5 +45,8 @@ p {
   font-size: 30pt;
 }
 body {
-  background-color: darkslategray;
+  background-color: rgb(20, 20, 20);
+}
+#title {
+  border: 1px double chartreuse;
 }

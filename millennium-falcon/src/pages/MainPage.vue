@@ -1,16 +1,10 @@
 <template>
-  <div :style="image">
-    <ul>
-      <li>
-        <a href="/pessoas">Pessoas</a>
-      </li>
-      <li>
-        <a href="">Filmes</a>
-      </li>
-      <li>
-        <a href="">Naves</a>
-      </li>
-    </ul>
+  <div id="main">
+    <footer id="navbar">
+      <a href="/pessoas">Pessoas</a>
+      <a href="">Filmes</a>
+      <a href="">Naves</a>
+    </footer>
     <div id="containner">
       <div id="card">
         <h1>Pessoas</h1>
@@ -56,5 +50,5 @@ export default {
 }
 </script>
 <style>
-@import "../assets/css/styles.css";
+@import "../assets/css/main.css";
 </style>
