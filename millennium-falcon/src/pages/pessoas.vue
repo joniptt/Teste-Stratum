@@ -53,13 +53,9 @@
 import api from "../services/api"
 export default {
   name: "Pessoas",
-  data: () => ({
-    luke: [],
-    darth: [],
-    leia: [],
-    obi: [],
-    planeta: [],
-  }),
+  data() {
+    return { luke: [], darth: [], leia: [], obi: [], planeta: [] }
+  },
   methods: {},
   computed: {},
   mounted() {

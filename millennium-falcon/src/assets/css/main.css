@@ -24,10 +24,9 @@
 }
 #card {
   width: 300px;
-  height: 300px;
+  height: 400px;
   float: left;
   border: 1px double chartreuse;
-  
   margin: 15px;
   text-align: center;
   display: block;
