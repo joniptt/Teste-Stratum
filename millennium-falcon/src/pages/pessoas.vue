@@ -59,14 +59,17 @@ export default {
   methods: {},
   computed: {},
   mounted() {
-    api.get("people").then((response) => {
-      this.luke = response.data.results[0]
-      this.darth = response.data.results[3]
-      this.leia = response.data.results[4]
-      this.obi = response.data.results[9]
-      this.console.log(response.data.results)
-      console.log(this.leia)
-    })
+    api
+      .get("people")
+      .then((response) => {
+        this.luke = response.data.results[0]
+        this.darth = response.data.results[3]
+        this.leia = response.data.results[4]
+        this.obi = response.data.results[9]
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   },
 }
 </script>

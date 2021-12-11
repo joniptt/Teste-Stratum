@@ -46,6 +46,13 @@ td {
 td {
   color: white;
 }
+tr:hover {
+  background-color: darkslategrey;
+}
+th:hover {
+  cursor: pointer;
+  background-color: rgb(110, 209, 10);
+}
 table {
   border-collapse: collapse;
   width: 75%;

@@ -8,15 +8,21 @@
     <div id="containner">
       <div id="card">
         <h1>Pessoas</h1>
-        <p>{{ pessoas }}</p>
+        <div id="circle">
+          <p>{{ pessoas }}</p>
+        </div>
       </div>
       <div id="card">
         <h1>Filmes</h1>
-        <p>{{ filmes }}</p>
+        <div id="circle">
+          <p>{{ filmes }}</p>
+        </div>
       </div>
       <div id="card">
         <h1>Naves</h1>
-        <p>{{ naves }}</p>
+        <div id="circle">
+          <p>{{ naves }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -32,18 +38,33 @@ export default {
     filmes: 0,
   }),
   mounted() {
-    api.get("people").then((response) => {
-      this.pessoas = response.data.count
-      console.log(response.data.count)
-    })
-    api.get("films").then((response) => {
-      this.filmes = response.data.count
-      console.log(response.data.count)
-    })
-    api.get("starships").then((response) => {
-      this.naves = response.data.count
-      console.log(response.data.count)
-    })
+    api
+      .get("people")
+      .then((response) => {
+        this.pessoas = response.data.count
+        console.log(response.data.count)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    api
+      .get("films")
+      .then((response) => {
+        this.filmes = response.data.count
+        console.log(response.data.count)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    api
+      .get("starships")
+      .then((response) => {
+        this.naves = response.data.count
+        console.log(response.data.count)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   },
   methods: {},
 }
