@@ -20,6 +20,11 @@ const routes = [
     name: "Filmes",
     component: () => import("../pages/filmes"),
   },
+  {
+    path: "/naves",
+    name: "Naves",
+    component: () => import("../pages/naves"),
+  },
 ]
 
 const router = new VueRouter({

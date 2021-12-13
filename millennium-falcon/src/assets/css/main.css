@@ -4,7 +4,6 @@
   background-color: black;
   width: 100%;
   overflow: hidden;
-  margin-left: -10px;
 }
 
 #navbar a {
@@ -15,7 +14,7 @@
   color: chartreuse;
   text-decoration: none;
   transition: all ease 1s;
-  width: 30%;
+  width: 33.3%;
 }
 #navbar a:hover {
   color: black;
@@ -38,7 +37,6 @@
   display: table;
 }
 p {
-  margin: 10px;
   padding: 15px;
   font-size: 30pt;
 }

@@ -4,7 +4,7 @@
   background-color: black;
   width: 100%;
   overflow: hidden;
-  margin-left: -10px;
+
   display: block;
 }
 
@@ -16,7 +16,7 @@
   color: chartreuse;
   text-decoration: none;
   transition: all ease 1s;
-  width: 30%;
+  width: 33.3%;
 }
 #navbar a:hover {
   color: black;
@@ -26,7 +26,7 @@
 table,
 td,
 th {
-  height: 50px;
+  height: 60px;
   border: 1px double black;
 }
 th {
@@ -55,7 +55,7 @@ th:hover {
 }
 table {
   border-collapse: collapse;
-  width: 75%;
+
   margin: 150px auto;
 }
 

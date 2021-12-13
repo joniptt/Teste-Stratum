@@ -5,18 +5,7 @@
       <a href="/pessoas">Pessoas</a>
       <a href="">Naves</a>
     </footer>
-    <table>
-      <tr>
-        <th v-on:click="sortTitle('title')">Tilte</th>
-        <th v-on:click="sortId('episode_id')">Episode_id</th>
-        <th>Created</th>
-      </tr>
-      <tr id="card" v-for="filme in filmes" v-bind:key="filme.id">
-        <td>{{ filme.title }}</td>
-        <td>{{ filme.episode_id }}</td>
-        <td>{{ filme.created }}</td>
-      </tr>
-    </table>
+    <b-table :items="filmes" :fields="fields" responsive="sm"></b-table>
   </div>
 </template>
 
@@ -26,28 +15,16 @@ export default {
   name: "Filmes",
   data() {
     return {
+      fields: [
+        { key: "title", sortable: true },
+        { key: "episode_id", sortable: true },
+        { key: "created", sortable: false },
+      ],
+
       filmes: [],
-      sortBy: "asc",
     }
   },
-  methods: {
-    sortTitle: function (dado) {
-      if (this.sortBy == "asc") {
-        this.filmes.sort(function (a, b) {
-          return a[dado].localeCompare(b[dado])
-        })
-        this.sortBy = "desc"
-      } else {
-        this.filmes.sort(function (a, b) {
-          return b[dado].localeCompare(a[dado])
-        })
-        this.sortBy = "asc"
-      }
-    },
-    sortId: function (dado) {
-      this.filmes.sort(dado)
-    },
-  },
+  methods: {},
   mounted() {
     api
       .get("films")
