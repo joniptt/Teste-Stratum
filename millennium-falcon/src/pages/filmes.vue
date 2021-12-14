@@ -3,9 +3,15 @@
     <footer id="navbar">
       <a href="/">Home</a>
       <a href="/pessoas">Pessoas</a>
-      <a href="">Naves</a>
+      <a href="/naves">Naves</a>
     </footer>
-    <b-table :items="filmes" :fields="fields" responsive="sm"></b-table>
+    <b-table
+      :items="filmes"
+      :fields="fields"
+      responsive="sm"
+      striped
+      bordered
+    ></b-table>
   </div>
 </template>
 
@@ -13,6 +19,7 @@
 import api from "../services/api"
 export default {
   name: "Filmes",
+  
   data() {
     return {
       fields: [
@@ -40,5 +47,9 @@ export default {
 </script>
 
 <style>
+table {
+  margin: 150px auto;
+}
+
 @import "../assets/css/films.css";
 </style>

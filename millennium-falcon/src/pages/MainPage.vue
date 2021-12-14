@@ -3,7 +3,7 @@
     <footer id="navbar">
       <a href="/pessoas">Pessoas</a>
       <a href="/filmes">Filmes</a>
-      <a href="">Naves</a>
+      <a href="/naves">Naves</a>
     </footer>
     <div id="containner">
       <div id="card">
@@ -32,6 +32,7 @@
 import api from "../services/api"
 export default {
   name: "MainPage",
+
   data: () => ({
     pessoas: 0,
     naves: 0,

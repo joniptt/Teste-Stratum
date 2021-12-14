@@ -3,7 +3,7 @@
     <footer id="navbar">
       <a href="/">Home</a>
       <a href="/filmes">Filmes</a>
-      <a href="">Naves</a>
+      <a href="/naves">Naves</a>
     </footer>
 
     <div id="containner">
