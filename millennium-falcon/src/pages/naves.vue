@@ -33,15 +33,18 @@ export default {
   data() {
     return {
       naves: [],
-      perPage: 1,
+      perPage: 10,
       currentPage: 1,
-      rows: 1,
+      rows: 36,
       fields: [
         { key: "model", sortable: true },
         { key: "cost_in_credits", sortable: true },
         { key: "max_atmosphering_speed", sortable: false },
       ],
     }
+  },
+  created() {
+    this.getDados()
   },
   methods: {
     getDados() {
@@ -52,12 +55,7 @@ export default {
     },
   },
   computed: {},
-  mounted() {
-    starships.get("/").then((response) => {
-      this.naves = response.data.results
-      console.log(this.naves)
-    })
-  },
+  mounted() {},
 }
 </script>
 

@@ -6,6 +6,7 @@
       <a href="/naves">Naves</a>
     </footer>
     <b-table
+      class="table"
       :items="filmes"
       :fields="fields"
       responsive="sm"
@@ -19,7 +20,7 @@
 import api from "../services/api"
 export default {
   name: "Filmes",
-  
+
   data() {
     return {
       fields: [
@@ -47,9 +48,5 @@ export default {
 </script>
 
 <style>
-table {
-  margin: 150px auto;
-}
-
 @import "../assets/css/films.css";
 </style>
