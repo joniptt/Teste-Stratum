@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       naves: [],
-      perPage: 10,
+      perPage: this.getLength,
       currentPage: 1,
       rows: 36,
       fields: [
@@ -53,18 +53,14 @@ export default {
         console.log(this.naves)
       })
     },
+    getLength() {
+      return this.naves.length
+    },
   },
-  computed: {},
   mounted() {},
 }
 </script>
 
 <style>
-.table thead {
-  background-color: chartreuse;
-}
-.table {
-  margin: 150px auto;
-}
-@import "../assets/css/main.css";
+@import "../assets/css/films.css";
 </style>

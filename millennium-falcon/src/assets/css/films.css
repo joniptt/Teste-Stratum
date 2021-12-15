@@ -24,10 +24,13 @@
 }
 .table {
   margin: 150px auto;
+  color: white;
 }
 .table thead {
   background-color: chartreuse;
+  color: black;
 }
+
 body {
   background-color: rgb(20, 20, 20);
 }

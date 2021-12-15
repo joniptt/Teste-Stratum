@@ -10,7 +10,6 @@
       :items="filmes"
       :fields="fields"
       responsive="sm"
-      striped
       bordered
     ></b-table>
   </div>
