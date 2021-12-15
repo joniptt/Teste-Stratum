@@ -22,3 +22,6 @@
   color: black;
   background-color: chartreuse;
 }
+body {
+  background-color: rgb(20, 20, 20);
+}

@@ -18,30 +18,24 @@
       <div id="card">
         <img src="../assets/images/darthvader.jpg" alt="darth" />
         <ul class="jedi">
-          <li>
-            {{ darth.name }}
-          </li>
-          <li>{{ darth.birth_year }}</li>
+          <li>Nome:{{ darth.name }}</li>
+          <li>Idade:{{ darth.birth_year }}</li>
           <li>Planeta natal:</li>
         </ul>
       </div>
       <div id="card">
         <img src="../assets/images/leia.jpg" alt="leia" />
         <ul class="jedi">
-          <li>
-            {{ leia.name }}
-          </li>
-          <li>{{ leia.birth_year }}</li>
+          <li>Nome:{{ leia.name }}</li>
+          <li>Idade:{{ leia.birth_year }}</li>
           <li>Planeta natal:</li>
         </ul>
       </div>
       <div id="card">
         <img src="../assets/images/obi.jpg" alt="obi" />
         <ul class="jedi">
-          <li>
-            {{ obi.name }}
-          </li>
-          <li>{{ obi.birth_year }}</li>
+          <li>Nome:{{ obi.name }}</li>
+          <li>Idade:{{ obi.birth_year }}</li>
           <li>Planeta natal:</li>
         </ul>
       </div>
