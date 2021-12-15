@@ -12,7 +12,7 @@
         <ul class="jedi">
           <li>Nome:{{ luke.name }}</li>
           <li>Idade:{{ luke.birth_year }}</li>
-          <li>Planeta natal: <button></button></li>
+          <li>Planeta natal:</li>
         </ul>
       </div>
       <div id="card">
