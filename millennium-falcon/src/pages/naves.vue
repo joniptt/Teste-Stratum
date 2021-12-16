@@ -6,6 +6,7 @@
       <a href="/filmes">Filmes</a>
     </footer>
     <b-table
+      pills
       class="table"
       :items="naves"
       :fields="fields"
@@ -18,6 +19,7 @@
     >
     </b-table>
     <b-pagination
+      class="pag"
       v-model="currentPage"
       :per-page="perPage"
       aria-controls="my-table"
@@ -62,5 +64,11 @@ export default {
 </script>
 
 <style>
+.pag :first-letter {
+  color: black;
+}
+.pag button {
+  background-color: chartreuse;
+}
 @import "../assets/css/films.css";
 </style>
