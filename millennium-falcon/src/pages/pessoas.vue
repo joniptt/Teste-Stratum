@@ -12,7 +12,7 @@
         <ul class="jedi">
           <li>Nome:{{ luke.name }}</li>
           <li>Idade:{{ luke.birth_year }}</li>
-          <li>Planeta natal:</li>
+          <li>Planeta natal: Tatooine</li>
         </ul>
       </div>
       <div id="card">
@@ -20,7 +20,7 @@
         <ul class="jedi">
           <li>Nome:{{ darth.name }}</li>
           <li>Idade:{{ darth.birth_year }}</li>
-          <li>Planeta natal:</li>
+          <li>Planeta natal: Tatooine</li>
         </ul>
       </div>
       <div id="card">
@@ -28,7 +28,7 @@
         <ul class="jedi">
           <li>Nome:{{ leia.name }}</li>
           <li>Idade:{{ leia.birth_year }}</li>
-          <li>Planeta natal:</li>
+          <li>Planeta natal: Alderaan</li>
         </ul>
       </div>
       <div id="card">
@@ -36,7 +36,7 @@
         <ul class="jedi">
           <li>Nome:{{ obi.name }}</li>
           <li>Idade:{{ obi.birth_year }}</li>
-          <li>Planeta natal:</li>
+          <li>Planeta natal: Stewjon</li>
         </ul>
       </div>
     </div>

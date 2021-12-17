@@ -3,30 +3,30 @@
     <div id="containner-home">
       <div id="home-card">
         <ul class="home">
-          <li>Nome:</li>
-          <li>Idade:</li>
-          <li>Planeta natal:</li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
       </div>
       <div id="home-card">
         <ul class="home">
-          <li>Nome:</li>
-          <li>Idade:</li>
-          <li>Planeta natal:</li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
       </div>
       <div id="home-card">
         <ul class="home">
-          <li>Nome:</li>
-          <li>Idade:</li>
-          <li>Planeta natal:</li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
       </div>
       <div id="home-card">
         <ul class="home">
-          <li>Nome:</li>
-          <li>Idade:</li>
-          <li>Planeta natal:</li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
       </div>
     </div>
@@ -38,10 +38,19 @@ import api from "../services/api"
 export default {
   name: "planeta",
   data() {
-    return {}
+    return {
+      planetas: [],
+    }
   },
   created() {
-    api.get("")
+    api
+      .get("homeworld")
+      .then((response) => {
+        this.planetas = response.data.results
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   },
 }
 </script>
