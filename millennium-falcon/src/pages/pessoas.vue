@@ -40,19 +40,40 @@
         </ul>
       </div>
     </div>
+    <planeta v-if="seen == false" />
+    <button v-if="seen" @click="hide">More Info</button>
+    <button v-if="seen == false" @click="show">Less Info</button>
   </div>
 </template>
 
 <script>
 import api from "../services/api"
+import planeta from "./planeta.vue"
 export default {
   name: "Pessoas",
-  data() {
-    return { luke: [], darth: [], leia: [], obi: [], planeta: [] }
+  components: {
+    planeta,
   },
-  methods: {},
+  data() {
+    return {
+      seen: true,
+      luke: [],
+      darth: [],
+      leia: [],
+      obi: [],
+      planeta: [],
+    }
+  },
+  methods: {
+    show() {
+      return (this.seen = true)
+    },
+    hide() {
+      return (this.seen = false)
+    },
+  },
   computed: {},
-  mounted() {
+  created() {
     api
       .get("people")
       .then((response) => {

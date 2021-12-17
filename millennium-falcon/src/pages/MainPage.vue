@@ -38,7 +38,7 @@ export default {
     naves: 0,
     filmes: 0,
   }),
-  mounted() {
+  created() {
     api
       .get("people")
       .then((response) => {

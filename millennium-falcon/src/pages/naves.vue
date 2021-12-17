@@ -59,7 +59,6 @@ export default {
       return this.naves.length
     },
   },
-  mounted() {},
 }
 </script>
 

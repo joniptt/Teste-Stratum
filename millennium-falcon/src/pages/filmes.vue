@@ -32,7 +32,7 @@ export default {
     }
   },
   methods: {},
-  mounted() {
+  created() {
     api
       .get("films")
       .then((response) => {
