@@ -63,8 +63,8 @@ export default {
 </script>
 
 <style>
-.pag :first-letter {
-  color: black;
+.pag :first-text {
+  background-color: chartreuse;
 }
 .pag button {
   background-color: chartreuse;
