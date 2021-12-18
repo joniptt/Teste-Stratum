@@ -7,36 +7,35 @@
     </footer>
 
     <div id="containner">
-      <div id="card">
-        <img src="../assets/images/luke.jpg" alt="luke" />
+      <div id="card" v-for="(jedis, index) in jedi" :key="index">
         <ul class="jedi">
-          <li>Nome:{{ luke.name }}</li>
-          <li>Idade:{{ luke.birth_year }}</li>
+          <img
+            src="../assets/images/luke.jpg"
+            alt=""
+            v-if="jedis.name === 'luke'"
+            class="jimg"
+          />
+          <img
+            src="../assets/images/darthvader.jpg"
+            alt=""
+            v-if="jedis.name === 'darth'"
+            class="jimg"
+          />
+          <img
+            src="../assets/images/leia.jpg"
+            alt=""
+            v-if="jedis.name === 'leia'"
+            class="jimg"
+          />
+          <img
+            src="../assets/images/obi.jpg"
+            alt=""
+            v-if="jedis.name === 'obi'"
+            class="jimg"
+          />
+          <li>Nome:{{ jedis.name }}</li>
+          <li>Idade:{{ jedis.birth_year }}</li>
           <li>Planeta natal: Tatooine</li>
-        </ul>
-      </div>
-      <div id="card">
-        <img src="../assets/images/darthvader.jpg" alt="darth" />
-        <ul class="jedi">
-          <li>Nome:{{ darth.name }}</li>
-          <li>Idade:{{ darth.birth_year }}</li>
-          <li>Planeta natal: Tatooine</li>
-        </ul>
-      </div>
-      <div id="card">
-        <img src="../assets/images/leia.jpg" alt="leia" />
-        <ul class="jedi">
-          <li>Nome:{{ leia.name }}</li>
-          <li>Idade:{{ leia.birth_year }}</li>
-          <li>Planeta natal: Alderaan</li>
-        </ul>
-      </div>
-      <div id="card">
-        <img src="../assets/images/obi.jpg" alt="obi" />
-        <ul class="jedi">
-          <li>Nome:{{ obi.name }}</li>
-          <li>Idade:{{ obi.birth_year }}</li>
-          <li>Planeta natal: Stewjon</li>
         </ul>
       </div>
     </div>
@@ -61,10 +60,30 @@ export default {
       darth: [],
       leia: [],
       obi: [],
+      jedi: [
+        { name: "luke", birth_year: "1600BY" },
+        { name: "darth", birth_year: "1600BY" },
+        { name: "leia", birth_year: "1600BY" },
+        { name: "obi", birth_year: "1600BY" },
+      ],
       planeta: [],
     }
   },
   methods: {
+    getImg(dado) {
+      console.log(dado)
+      switch (dado) {
+        case "luke":
+          return "src/assets/iamges/luke.jpg"
+
+        case "darth":
+          return "src/assets/iamges/darthvader.jpg"
+        case "leia":
+          return "src/assets/iamges/leia.jpg"
+        case "obi":
+          return "src/assests/images/obi.jpg"
+      }
+    },
     show() {
       return (this.seen = true)
     },
