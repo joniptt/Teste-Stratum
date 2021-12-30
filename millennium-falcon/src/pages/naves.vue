@@ -6,20 +6,20 @@
       <a href="/filmes">Filmes</a>
     </footer>
     <b-table
-      pills
-      class="table"
+      id="my-table"
       :items="naves"
       :fields="fields"
-      :per-page="perPage"
+      :per-page="0"
       :current-page="currentPage"
-      :total-rows="rows"
       responsive="sm"
-      striped
       bordered
+      :busy.sync="isBusy"
+      ref="table"
     >
     </b-table>
     <b-pagination
       class="pag"
+      :total-rows="rows"
       v-model="currentPage"
       :per-page="perPage"
       aria-controls="my-table"
@@ -34,40 +34,54 @@ export default {
 
   data() {
     return {
+      isBusy: false,
       naves: [],
-      perPage: this.getLength,
+      perPage: 10,
       currentPage: 1,
-      rows: 36,
+      rows: 0,
       fields: [
         { key: "model", sortable: true },
         { key: "cost_in_credits", sortable: true },
-        { key: "max_atmosphering_speed", sortable: false },
+        { key: "max_atmosphering_speed", sortable: true },
       ],
     }
   },
   created() {
     this.getDados()
   },
+  watch: {
+    currentPage() {
+      this.getDados()
+    },
+  },
   methods: {
     getDados() {
-      starships.get("?page=" + this.currentPage).then((response) => {
-        this.naves = response.data.results
-        console.log(this.naves)
-      })
-    },
-    getLength() {
-      return this.naves.length
+      this.isBusy = true
+      starships
+        .get("/?page=" + this.currentPage)
+        .then((response) => {
+          this.rows = response.data.count
+          this.naves = response.data.results
+          this.isBusy = false
+        })
+        .catch((response) => {
+          console.log(response)
+          this.isBusy = false
+        })
     },
   },
 }
 </script>
 
 <style>
-.pag :first-text {
+.pag :prev-text {
   background-color: chartreuse;
 }
 .pag button {
   background-color: chartreuse;
+}
+.pag button:hover {
+  background-color: rgb(113, 216, 10);
 }
 @import "../assets/css/films.css";
 </style>

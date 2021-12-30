@@ -8,34 +8,34 @@
 
     <div id="containner">
       <div id="card" v-for="(jedis, index) in jedi" :key="index">
+        <img
+          src="../assets/images/luke.jpg"
+          alt=""
+          v-if="jedis.name === 'Luke Skywalker'"
+          class="jimg"
+        />
+        <img
+          src="../assets/images/darthvader.jpg"
+          alt=""
+          v-if="jedis.name === 'Darth Vader'"
+          class="jimg"
+        />
+        <img
+          src="../assets/images/leia.jpg"
+          alt=""
+          v-if="jedis.name === 'Leia Organa'"
+          class="jimg"
+        />
+        <img
+          src="../assets/images/obi.jpg"
+          alt=""
+          v-if="jedis.name === 'Obi-Wan Kenobi'"
+          class="jimg"
+        />
         <ul class="jedi">
-          <img
-            src="../assets/images/luke.jpg"
-            alt=""
-            v-if="jedis.name === 'luke'"
-            class="jimg"
-          />
-          <img
-            src="../assets/images/darthvader.jpg"
-            alt=""
-            v-if="jedis.name === 'darth'"
-            class="jimg"
-          />
-          <img
-            src="../assets/images/leia.jpg"
-            alt=""
-            v-if="jedis.name === 'leia'"
-            class="jimg"
-          />
-          <img
-            src="../assets/images/obi.jpg"
-            alt=""
-            v-if="jedis.name === 'obi'"
-            class="jimg"
-          />
           <li>Nome:{{ jedis.name }}</li>
           <li>Idade:{{ jedis.birth_year }}</li>
-          <li>Planeta natal: Tatooine</li>
+          <li>Planeta natal: {{ getPlanet(jedis.homeworld) }}</li>
         </ul>
       </div>
     </div>
@@ -56,50 +56,39 @@ export default {
   data() {
     return {
       seen: true,
-      luke: [],
-      darth: [],
-      leia: [],
-      obi: [],
-      jedi: [
-        { name: "luke", birth_year: "1600BY" },
-        { name: "darth", birth_year: "1600BY" },
-        { name: "leia", birth_year: "1600BY" },
-        { name: "obi", birth_year: "1600BY" },
-      ],
+
+      jedi: [],
       planeta: [],
     }
   },
   methods: {
-    getImg(dado) {
-      console.log(dado)
-      switch (dado) {
-        case "luke":
-          return "src/assets/iamges/luke.jpg"
-
-        case "darth":
-          return "src/assets/iamges/darthvader.jpg"
-        case "leia":
-          return "src/assets/iamges/leia.jpg"
-        case "obi":
-          return "src/assests/images/obi.jpg"
-      }
-    },
     show() {
       return (this.seen = true)
     },
     hide() {
       return (this.seen = false)
     },
+    async getPlanet(dados) {
+      try {
+        const mundo = await api.get(dados)
+        console.log(mundo.data.name)
+        return mundo.data.name
+      } catch (e) {
+        console.log(e)
+      }
+    },
   },
   computed: {},
+
   created() {
     api
       .get("people")
       .then((response) => {
-        this.luke = response.data.results[0]
-        this.darth = response.data.results[3]
-        this.leia = response.data.results[4]
-        this.obi = response.data.results[9]
+        for (var i = 0; i < 10; i++) {
+          if (i == 0 || i == 3 || i == 4 || i == 9) {
+            this.jedi.push(response.data.results[i])
+          }
+        }
       })
       .catch((error) => {
         console.log(error)
