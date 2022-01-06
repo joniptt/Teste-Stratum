@@ -35,7 +35,7 @@
         <ul class="jedi">
           <li>Nome:{{ jedis.name }}</li>
           <li>Idade:{{ jedis.birth_year }}</li>
-          <li>Planeta natal: {{ getPlanet(jedis.homeworld) }}</li>
+          <li>Planeta natal: {{}}</li>
         </ul>
       </div>
     </div>
@@ -56,7 +56,6 @@ export default {
   data() {
     return {
       seen: true,
-
       jedi: [],
       planeta: [],
     }
@@ -71,8 +70,9 @@ export default {
     async getPlanet(dados) {
       try {
         const mundo = await api.get(dados)
-        console.log(mundo.data.name)
-        return mundo.data.name
+        this.planeta.push(mundo.data.name)
+
+        console.log(this.planeta)
       } catch (e) {
         console.log(e)
       }
@@ -81,6 +81,7 @@ export default {
   computed: {},
 
   created() {
+    this.getPlanet()
     api
       .get("people")
       .then((response) => {
@@ -88,6 +89,7 @@ export default {
           if (i == 0 || i == 3 || i == 4 || i == 9) {
             this.jedi.push(response.data.results[i])
           }
+          console.log(this.jedi)
         }
       })
       .catch((error) => {
